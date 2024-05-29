@@ -44,12 +44,17 @@ git codfig user.name
 git config --global user.name "YoonSeokShan98"
 git config --global user.email "shift71895@gmail.com"
 
-- 해당 폴더로 이동
+- 해당 폴더로 이동 (깃 계정에 처음 업로드)
 git init : 깃 생성
 git add : 깃에 추가
 git commit -m "test" : 커밋 실행
 git remote add origin 리포지터리 주소
 git push -u origin master
+
+깃저장소 두번째 업로드
+git add : 깃에 추가
+git commit -m "test" : 커밋 실행
+git push
 
 ***cmd 통해서 깃허브 파일 등록하는 순서 (명령어)***
 cd c:/
