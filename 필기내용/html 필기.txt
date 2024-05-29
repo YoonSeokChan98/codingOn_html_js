@@ -18,13 +18,114 @@ charset=속성
 - 크롬, 익스플로러, 사파리(맥)
 - html로 작성된 파일을 보여주는 프로그램
 
-
 편집기(IDE)- 메모장, VS code
 
+리눅스 - 무료서버 운영체제
+깃(Git) - 분산저장관리 명령어
+깃허브(MS) - 서버 호스팅 공간
+
+깃 사용 순서
+1. 깃허브(MS) 계정 생성 - 서버 호스팅 공간
+2. 깃 소프트웨어 설치 (내컴퓨터)
+
+https://github.com/사용자이름
+내컴퓨터(로컬-local) <-> 원격 저장소(깃허브)
+윈도우 기준 - 명령 프롬프트(cmd)
+맥 기준 - 터미널(terminal)
+
+*cmd 명령어
+cd - 디렉터리 이동(폴더 이동)
+dir - 폴더, 파일 목록보기
+c:/ - (c의 루트)
+
+*git 명령어
+깃의 계정 설정
+git codfig user.name
+git config --global user.name "YoonSeokShan98"
+git config --global user.email "shift71895@gmail.com"
+
+- 해당 폴더로 이동
+git init : 깃 생성
+git add : 깃에 추가
+git commit -m "test" : 커밋 실행
+git remote add origin 리포지터리 주소
+git push -u origin master
+
+***cmd 통해서 깃허브 파일 등록하는 순서 (명령어)***
+cd c:/
+cd KDT_html_js
+git init
+git add .
+git commit -m "html upload"
+git remot add origin https://...
+
+
+
+echo "# git-test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/YoonSeokShan98/git-test.git
+git push -u origin main
+
+git status : 상태보기
+
+c:/
+cd git-test
+dir
+
+---용어 및 태그---
 / = 종료라는 뜻
+예) <열기> </닫기>
 utp-8 = 한글
 h1 ~ h6 = 글자크기
 숫자가 커질 수록 글자크기 작아짐
+<!DOCTYPE html> = 5버전이라는 뜻
+
+Element = 요소
+charset = 
+Git =
+<hr> = 선을 만드는 태그, 닫는 태그 없음
+<img> = 이미지를 넣는 태그, 닫는 태그 없음
+<ul> = 순서 없는 목록
+<ol> = 순서 있는 목록
+<start> = 시작 번호
+<b> = 두껍게
+<strong> = 두껍게! +semantic한 의미를 지님
+<i> = 이탤릭
+<em>
+<del> = 중간줄
+<u>
+
+하이퍼링크 <a>
+
+
+HTML 기본문법
+속성(Attribute)
+<태그 속성="값">내용</태그>
+
+주석(comements)
+개발자에게 코드를 설명
+<!--내용-->
+
+
+
+복붙 빠르게 하는방법
+알트 + 쉬프트 + 방향키 아래 = 컨트롤 + c, 컨트롤 + v
+
+주석 다는법 (코드 속 메모장)= <!--내용-->
+주석을 빨리 다는법
+컨트롤 + /
+
+웹브라우저 닫은 탭 다시 여는법
+컨트롤 + 쉬프트 + t
+
+http://localhost:5500/text.html
+http://www.naver.com
+http://내컴퓨터:포트번호/파일이름
+
+
 --------------------------------------------------------------
 css- 글씨체 모양 크기 등을 설정하는 것 ,인테리어
 js- 알림창, 행동이 이뤄지는것
