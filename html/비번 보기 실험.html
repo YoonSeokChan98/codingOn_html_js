@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 폼</title>
+</head>
+<body>
+    <form action="loginprocess.jsp">
+        <p>
+            <label>아이디:</label>
+            <input type="text" placeholder="아이디를 입력하세요.">
+        </p>
+        <p>
+            <label>비밀번호:</label>
+            <input type="password" id="passwordField" placeholder="비밀번호를 입력하세요.">
+            <button type="button" onclick="togglePassword()">보기/숨기기</button> <!-- 추가 -->
+        </p>
+        <button type="submit">로그인</button>
+    </form>
+
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("passwordField");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
