@@ -1,0 +1,19 @@
+/* product.html */
+img{
+    border: 1px solid rgb(32, 32, 179);
+    /* 테두리를 둥글게 */
+    border-radius: 5px;
+}
+
+/* board.html */
+table{
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+th, td{
+    border: 1px solid #ccc;
+    padding: 10px
+}
+thead{
+    background-color: #eee;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴표 만들기</title>
+    <style>
+        table{
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
+        /* 쉼표(,)는 그룹 선택자를 뜻한다 */
+        th, td{
+            border: 1px solid gray;
+            text-align: center;
+        }
+        thead{
+            background-color: #eeeeee;
+        }
+    </style>
+</head>
+<body>
+    <h3>메뉴판</h3>
+    <table>
+        <colgroup>
+            <col style="background-color: aliceblue;">
+            <col>
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th>분류</th>
+                <th>음식</th>
+                <th>가격</th>
+                <th>이미지</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td rowspan="2">커피류</td>
+                <td>아메리카노</td>
+                <td>4,000원</td>
+                <td>
+                    <img src="img/coffee.jpg" alt="아메리카노">
+                </td>
+            </tr>
+            <tr>
+                <td>카페라떼</td>
+                <td>4,800원</td>
+                <td>
+                    <img src="img/coffee2.png" alt="카페라떼">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="3">주스류</td>
+                <td>딸기주스</td>
+                <td rowspan="2">5,000원</td>
+                <td>
+                    <img src="img/berry_small.jpg" alt="딸기주스">
+                </td>
+            </tr>
+            <tr>
+                <td>망고주스</td>
+                <td>
+                    <img src="img/manggo.gif" alt="망고주스">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
