@@ -1,0 +1,14 @@
+
+#container{
+    width: 500px;
+    height: 0 auto;
+    padding: auto;
+    margin: auto;
+}
+ul li{
+    list-style: none;
+    margin: 10px;
+}
+div{
+    margin-block: 10px;
+}
