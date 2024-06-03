@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안쪽여백 - padding</title>
+    <style>
+        *{margin: 0;}
+        #wrap{
+            width: 1000px;
+            height: 800px;
+            /* right left -> auto
+            요소의 너비값을 뻰 나머지 공간의 좌, 우 마진을 똑같이 맞춘다. */
+            margin: 10px auto;
+            border: 1px solid #aaa;
+        }
+        #box1{
+            width: 200px;
+            background: blue;
+            color: white;
+            margin: 50px auto 0;
+            border: 5px solid #222;
+            padding: 10px 20px;
+        }
+        #box2{
+            width: 200px;
+            background: blue;
+            color: white;
+            margin: 10px auto 0;
+            border: 5px solid #222;
+            padding: 10px 20px 10px 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="box1">
+            패딩(padding)이란 컨텐츠 영역과 테두리 사이의 여백을 말한다.
+        </div>
+        <div id="box2">
+            패딩(padding)이란 컨텐츠 영역과 테두리 사이의 여백을 말한다.
+        </div>
+    </div>
+</body>
+</html>

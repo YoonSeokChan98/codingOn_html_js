@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바깥 여백 - margin</title>
+    <style>
+        /* margin중첩 - 수직 배치일 경우 
+        margin - top, bottom은 margin이 중첩될 경우 margin이 큰쪽으로 설정된다. */
+        div{
+            width: 200px;
+            height: 100px;
+        }
+        #box1{
+            background-color: red;
+            /* 순서: top > right > bottom > left */
+            margin: 20px 10px;
+        }
+        /* 위 아래는 큰 수로 적용 된다 / 좌 우는 합해서 계산된다
+        예) box1의 아래 margin은 mox2의 margin에 영향을 받아 30px이다 */
+        #box2{
+            background-color: green;
+            margin: 30px 20px;
+        }
+        #box3{
+            background-color: blue;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+</body>
+</html>
