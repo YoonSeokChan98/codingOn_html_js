@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과일 주문하기</title>
+    <style>
+        form{
+            /* 박스 넓이 좌우 줄이기 */
+            width: 500px;
+        }
+        form ul li{
+            /* 리스트 옆 점 없애기 */
+        list-style: none;
+        /* 위, 아래: 16px / 우, 좌: 10px 주기 */
+        margin: 16px 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>참외 수량 선택</legend>
+            <ul>
+                <li>
+                    <label for="home">가정용 2kg</label>
+                    <!-- input type="number": 수량 갯수 -->
+                    <!-- min="최소갯수", max="최대갯수", value="시작갯수" -->
+                    <input type="number" id="home" name="home"
+                    min="0" max="5" value="1">개(최대 5개)
+                </li>
+                <li>
+                    <label for="home2">가정용 3kg</label>
+                    <input type="number" id="home2" name="home2"
+                    min="0" max="3" value="1">개(최대 3개)
+                </li>
+                <li>
+                    <!-- input type="submit" 데이터를 서버로 전송하기 -->
+                    <input type="submit" value="주문하기">
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+#container{
+    width: 1000px;
+    margin: 0 auto;
+}
+/* 보라색 박스 부분 */
+nav{
+    height: 80px;
+    background-color: blueviolet;
+    text-align: center;
+}
+/* 하얀 글씨 부분 */
+ul li{
+    display: inline-block;
+    line-height: 80px;
+    list-style: none;
+    padding: 0 20px;
+}
+ul li a{
+    color: white;
+    text-decoration: none;
+}
+/* 마우스를 올리면 노란색으로 변함 */
+ul li a:hover{
+    color: yellow;
+}
+section{
+    margin: 20px;
+}

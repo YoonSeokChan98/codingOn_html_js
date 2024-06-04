@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* box 안을 채울때는 background-color: red;
+           box 태두리 색을 줄 때는 border-color: red;
+                                border-style: solid;*/
+        div{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            /* 수평으로 만들 때는 display: inline;
+            다른 속성이 있는 경우에는 display: inline-block;  */
+            display: inline-block;
+        }
+        #box0{
+            border-style: solid;
+            border-color: red;
+        }
+        #box1{
+            /* border-color: red; */
+            background-color: red;
+        }
+        .box2{
+            /* border-color: blue; */
+            background-color: blue;
+        }
+        .box3{
+            /* border-color: green; */
+            background-color: green;
+        }
+        /* .none{
+            display: none;
+        } 이건 왜 안되는데;*/ 
+    </style>
+</head>
+<body>
+    <!-- 색상이 핑크인 정사각형을 만들기 
+        넓이, 높이 100px-->
+    <div id="box0"></div>
+    <div id="box1" calass="none"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</html>

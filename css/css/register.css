@@ -1,14 +1,30 @@
 
 #container{
     width: 500px;
-    height: 0 auto;
-    padding: auto;
+    /* height: 0 auto; */
+    /* padding: auto; */
     margin: auto;
 }
+
 ul li{
     list-style: none;
-    margin: 10px;
+    margin: 16px;
 }
-div{
+ul li label{
+    width: 100px;
+    float: left;
+}
+/* div{
     margin-block: 10px;
+} */
+ul li input{
+    width: 140px; height: 20px;
+}
+select{
+    width: 150px; height: 25px;
+}
+button{
+    padding: 5px 10px;
+    /* 마우스 포인터 */
+    cursor: pointer;
 }

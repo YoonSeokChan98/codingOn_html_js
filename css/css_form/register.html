@@ -14,14 +14,23 @@
                 <ul>
                     <li>
                         <label for="classId">학과번호</label>
-                        <input type="text" id="classId" name="classId">
+                        <input type="text" id="classId" name="classId" required>
                     </li>
                     <li>
                         <label for="major">학과</label>
-                        <select name="major" id="mojor">
-                            <option value="software" selected>소프트웨어학과</option>
-                            <option value="electronic">전자공학과</option>
-                            <option value="archit">건축공학과</option>
+                        <select name="major" id="major">
+                            <!-- 선택지 안에 분류를 나눠줌 -->
+                            <optgroup label="공과대학">
+                                <option value="software" selected>소프트웨어학과</option>
+                                <option value="electronic">전자공학과</option>
+                                <option value="archit">건축공학과</option>
+                            </optgroup>
+                            <optgroup>
+                                <optgroup label="경영대학">
+                                    <option value="경영학">경영학과</option>
+                                    <option value="경제학">경제과</option>
+                                    <option value="회계학">회계학과</option>
+                            </optgroup>
                         </select>
                     </li>
                 </ul>
