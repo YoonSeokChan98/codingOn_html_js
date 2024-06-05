@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형제 선택자</title>
+    <style>
+        /* 가상 선택자 - 콜론(:)이 접두어(프리픽스)인 명령어 
+            input 관련, a태그 관련 */
+        form{
+            width: 500px;
+        }
+        input:disabled{
+            background-color: #ddd;
+            border: 1px solid #ccc;
+        }
+        input:focus{
+            background-color: orange;
+        }
+        /* 체크된 input에 가장 가까운 요소에 스타일 적용 */
+        input:checked + span{
+            color: blue;
+        }
+        /* a{
+            text-decoration: none;
+        } */
+        /* a태그만 사용해도 됨 */
+        a:link, a:visited{
+            text-decoration: none;
+            color: black;
+        }
+        /* 마우스가 올라갔을 때 스타일 적용 */
+        a:hover{
+            text-decoration: underline;
+        }
+        a:active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>사용자 정보</legend>
+            <label for="name">이름 <input type="text" disabled></label><br>
+            <label for="email">이메일 <input type="email"></label>
+        </fieldset>
+        <fieldset>
+            <legend>취미</legend>
+            <label>
+                <input type="radio" name="hobby" value="movie"><span>영화감상</span>
+            </label>
+            <label>
+                <input type="radio" name="hobby" value="sports"><span>운동</span>
+            </label>
+            <label>
+                <input type="radio" name="hobby" value="game"><span>게임</span>
+            </label>
+        </fieldset>
+    </form>
+    <h3>추천 사이트</h3>
+    <a href="http://www.naver.com">네이버</a>
+    <a href="http://www.google.com">구글</a>
+</body>
+</html>

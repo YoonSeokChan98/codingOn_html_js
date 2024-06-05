@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tranfrom(변형) 속성</title>
+    <style>
+        div.b{
+            width: 150px;
+            height: 80px;
+            background-color: greenyellow;
+            /* rotate(각도) degree단위 사용 */
+        }
+        div.b:hover{
+            transform: rotate(45deg) ;
+        }
+        div.c{
+            width: 150px;
+            height: 80px;
+            background-color: greenyellow;
+            /* translateX(거리) px단위 사용 - X, Y축 이동 */
+            /* transform: translateY(20px); */
+        }
+        div.c:hover{
+            transform: translate(50px);
+        }
+        div.d{
+            width: 150px;
+            height: 80px;
+            background-color: greenyellow;
+            /* sclae(크기) 배수(1.5, 2) 사용 */
+        }
+        div.d:hover{
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <h2>변형전 개체</h2>
+    <div class="a">hello world!</div>
+
+    <h2>transform: rotate(20deg)</h2>
+    <div class="b">hello world!</div>
+
+    <h2>transform: translateX(20px)</h2>
+    <div class="c">hello world!</div>
+
+    <h2>transform: scale(1.5)</h2>
+    <div class="d">hello world!</div>
+</body>
+</html>

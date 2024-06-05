@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Selectors Example</title>
+    <style>
+        a:hover {
+            color: blue;
+        }
+        button:active {
+            background-color: red;
+        }
+        input:focus {
+            border-color: green;
+        }
+        a:visited {
+            color: purple;
+        }
+        p:first-child {
+            font-weight: bold;
+        }
+        p:last-child {
+            color: red;
+        }
+        li:nth-child(2) {
+            color: blue;
+        }
+        p::before {
+            content: "Note: ";
+            font-weight: bold;
+        }
+        p::after {
+            content: " End.";
+            font-weight: bold;
+        }
+        p::first-letter {
+            font-size: 2em;
+            color: red;
+        }
+        ::selection {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">Link</a>
+    <button>Click Me</button>
+    <input type="text" placeholder="Focus me">
+    <ul>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+</body>
+</html>
