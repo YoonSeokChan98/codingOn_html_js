@@ -33,10 +33,11 @@
             right: 0px;
         }
         #box4{
-            position: absolute;
-            bottom: 0px;
-            /* left: 0px; 이거 없어도 되는거 아닌..가?
-                          있어야 한다면 이유가 무엇인가... */ 
+            /* position: absolute; */
+            /* fixed, absolute는 브라우저 창이 기준이다 */
+            position: fixed;
+            top: 20px;
+            right: 30px;
         }
         #box5{
             position: absolute;
@@ -50,7 +51,8 @@
         <div id="box1"></div>
         <div id="box2"></div>
         <div id="box3"></div>
-        <div id="box4"></div>
+        <!-- style 우선 순위: 인라인 > 내부 > 외부스타일 -->
+        <div id="box4" style="background-color: red;"></div>
         <div id="box5"></div>
     </div>
 </body>

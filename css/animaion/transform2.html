@@ -12,7 +12,7 @@
             /* rotate(각도) degree단위 사용 */
         }
         div.b:hover{
-            transform: rotate(45deg) ;
+            transform: rotate(-20deg) ;
         }
         div.c{
             width: 150px;
@@ -22,7 +22,7 @@
             /* transform: translateY(20px); */
         }
         div.c:hover{
-            transform: translate(50px);
+            transform: translate(20px);
         }
         div.d{
             width: 150px;
@@ -32,6 +32,16 @@
         }
         div.d:hover{
             transform: scale(1.5);
+        }
+
+        div.e{
+            width: 150px;
+            height: 80px;
+            background-color: greenyellow;
+        }
+        /* skew(x축 각도, y축 각도); */
+        div.e:hover{
+            transform: skew(20deg, 30deg);
         }
     </style>
 </head>
@@ -47,5 +57,8 @@
 
     <h2>transform: scale(1.5)</h2>
     <div class="d">hello world!</div>
+
+    <h2>transform: skew(20deg)</h2>
+    <div class="e">hello world!</div>
 </body>
 </html>
