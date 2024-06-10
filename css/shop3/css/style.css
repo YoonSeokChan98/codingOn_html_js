@@ -61,16 +61,19 @@ header nav ul li a:hover{
 #container #main #contents{
     width: 90%;
     margin: 0 auto;
+    padding-top: 55px;
 }
 #main #contents h2{
     text-align: center;
-    font-size: 20px;
+    font-size: 21px;
+    /* margin: 10px; */
+    padding-bottom: 20px;
 }
 
 
 /* footer 스타일 */
 footer{
-    margin-top: 200px;
+    margin-top: 100px;
     height: 150px;
     border-top: 2px solid #222;
     clear: both;
@@ -103,22 +106,37 @@ footer #footer_menu li:last-child{
 }
 
 /* product 스타일 */
+    #contents {
+        /* 상대 위치를 기준으로 자식 요소를 배치하기 위해 추가 */
+        position: relative; 
+        /* 제목 아래에 여유 공간을 만듦 */
+        padding-top: 70px; 
+    }
     #main #contents .product_h2{
-        margin: 30px 0;
+        /* 기본 마진 제거 */
+        margin: 0; 
+        /* 기본 패딩 제거 */
+        padding: 0; 
+        /* 절대 위치로 배치 */
+        position: absolute; 
+        /* 상단에 위치 */
+        top: 30px; 
+        /* 왼쪽에 위치 */
+        left: 0px; 
         font-size: 30px;
     }
     #main #contents #watermelon, #strawberry{
         width: 100%;
+    }
+    #main #contents h3{
+        color: red;
+        margin: 20px 0;
     }
     #main #contents #watermelon img, #strawberry img{
         margin-top: 30px;
         display: block;
         width: 300px;
         border-radius: 6px;
-    }
-    #main #contents h3{
-        color: red;
-        margin: 20px;
     }
     #contents #watermelon p, #strawberry p{
         margin-top: 10px;
@@ -225,15 +243,18 @@ footer #footer_menu li:last-child{
     }
 
     /* product */
+    #main #contents .product_h2{
+        left: 30px;
+    }
     #contents #watermelon, #strawberry{
         margin: 30px 0;
         height: 400px;
     }
     #main #contents #watermelon img, #strawberry img{
-        width: 400px;
-        height: 400px;
+        width: 300px;
+        height: 300px;
         float: left;
-        margin: 0 30px 30px 30px;
+        margin: 0 30px 50px 30px;
     }
     #contents #watermelon p, #strawberry p{
         line-height: 1.5;
