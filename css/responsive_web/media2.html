@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리 예제</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+            /* 모바일 기준 */
+        @media screen and (max-width: 762px) {
+            body{
+            height: 2000px;
+            /* no-repeat - 반복안되게 */
+            background: url('images/flowers.png') no-repeat;
+            /* background-size: cover - 화면에 가득 채우게 */
+            background-size: cover;
+            }
+        }   
+        /* 테블릿 기준 */
+        @media screen and (min-width: 760px) {
+            body{
+                background: url('images/field.jpg') no-repeat;
+                background-size: cover;
+            }
+            div{
+                background-color: green;
+            }
+        }
+        /* pc 기준 */
+        @media screen and (min-width: 1024px) {
+            body{
+                background: url('images/abstract.png') no-repeat;
+                background-size: cover;
+            }
+            div{
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>반응형 웹 페이지</h1>
+    <div></div>
+</body>
+
+</html>

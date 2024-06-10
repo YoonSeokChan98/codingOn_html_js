@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리 예제</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        /* 넓이가 760px 이상이면 초록색으로 바뀜 */
+        
+        @media screen and (min-width: 760px) {
+            div{
+                background-color: green;
+            }
+        }
+        @media screen and (min-width: 960px) {
+            div{
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+/* 모바일 기기 기준 */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #f00;
+}
+
+header{
+    height: 100px;
+    border: 3px solid #fff;
+}
+main{
+    height: 600px;
+    border: 3px solid #fff;
+}
+footer{
+    height: 100px;
+    border: 3px solid #fff;
+}
+
+/* 태블릿 pc 기준 */
+/* 768px ~ 1023px */
+/* @media screen and (min-width: 768px) and (max-width:1023px){ 
+   (max-width:1023px)부분은 생략해서 작성해도 됨 */
+@media screen and (min-width: 768px) {
+    #container{
+        background-color: #0f0;
+    }
+}
+
+/* pc 기분 */
+/* 1024px 이상 */
+@media screen and (min-width: 1024px) {
+    #container{
+        background-color: #00f;
+    }
+}
