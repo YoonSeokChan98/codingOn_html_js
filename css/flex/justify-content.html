@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>justify-content 속성</title>
+    <style>
+        #wrap{
+            /* 가변 크기 / 브라우저 크기의 80% */
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid #333;
+            background-color: #eee;
+            display: flex;
+            /* 수평 정렬 - 왼쪽, 오른쪽, 가운데, 균등 정렬 */
+            
+            /* 가운데 정렬 - 주 축 방향의 중앙에 정렬 */
+            /* justify-content: center; */
+
+            /* 오른쪽 정렬 - 주 축 방향의 끝을 기준으로 정렬 */
+            /* justify-content: flex-end; */
+            /* justify-content: right; */
+
+            /* 왼쪽 정렬 - 주 축 방향의 시작을 기준으로 정렬 */
+            /* justify-content: flex-start; */
+            /* justify-content: left; */
+
+            /* 균등 정렬 - 주 축 방향의 시작과 끝을 맞추고 일정 간격으로 정렬 */
+            /* justify-content: space-between; */
+
+            /* 균등 정렬 - 주 축 방향을 기준으로 일정 간격을 정렬 */
+            /* justify-content: space-around; */
+
+            /* 균등 정렬 - 모든 간격을 균등하게 정렬 */
+            justify-content: space-evenly;
+
+        }
+        #wrap div{
+            width: 100px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>justify-content 속성</h1>
+    <div id="wrap">
+        <div style="background-color: coral;">A</div>
+        <div style="background-color: lightblue;">B</div>
+        <div style="background-color: khaki;">C</div>
+        <div style="background-color: pink;">D</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #f1f1f1;
+}
+ul li{
+    list-style: none;
+}
+
+/* 모바일 기준 */
+/* header 스타일 */
+header .navbar{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(1, 1, 73);
+    padding: 8px 24px;
+}
+header .navbar_logo{
+    font-size: 24px;
+}
+header .navbar_logo a:hover{
+    color: skyblue;
+}
+/* justify-content: flex-end 적용을 위해서는 ul - 크기가 필요 */
+header .navbar_menu{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+header .navbar_menu li{
+    text-align: center;
+    padding: 10px;
+}
+header .navbar_menu li:hover{
+    background-color: skyblue;
+    border-radius: 4px;
+}
+
+/* PC 기준 */
+@media screen and (min-width: 768px) {
+    header .navbar{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    header .navbar_menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        /* justify-content: center; */
+        margin-right: 100px;
+    }
+    header .navbar_menu li{
+        padding: 16px 24px;
+    }
+}

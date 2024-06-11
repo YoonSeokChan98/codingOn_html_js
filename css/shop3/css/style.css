@@ -106,41 +106,44 @@ footer #footer_menu li:last-child{
 }
 
 /* product 스타일 */
-    #contents {
-        /* 상대 위치를 기준으로 자식 요소를 배치하기 위해 추가 */
-        position: relative; 
-        /* 제목 아래에 여유 공간을 만듦 */
-        padding-top: 70px; 
-    }
-    #main #contents .product_h2{
-        /* 기본 마진 제거 */
-        margin: 0; 
-        /* 기본 패딩 제거 */
-        padding: 0; 
-        /* 절대 위치로 배치 */
-        position: absolute; 
-        /* 상단에 위치 */
-        top: 30px; 
-        /* 왼쪽에 위치 */
-        left: 0px; 
-        font-size: 30px;
-    }
-    #main #contents #watermelon, #strawberry{
-        width: 100%;
-    }
-    #main #contents h3{
-        color: red;
-        margin: 20px 0;
-    }
-    #main #contents #watermelon img, #strawberry img{
-        margin-top: 30px;
-        display: block;
-        width: 300px;
-        border-radius: 6px;
-    }
-    #contents #watermelon p, #strawberry p{
-        margin-top: 10px;
-    }
+#contents {
+    /* 상대 위치를 기준으로 자식 요소를 배치하기 위해 추가 */
+    position: relative; 
+    /* 제목 아래에 여유 공간을 만듦 */
+    padding-top: 70px; 
+}
+#main #contents .product_h2{
+    /* 기본 마진 제거 */
+    margin: 0; 
+    /* 기본 패딩 제거 */
+    padding: 0; 
+    /* 절대 위치로 배치 */
+    position: absolute; 
+    /* 상단에 위치 */
+    top: 30px; 
+    /* 왼쪽에 위치 */
+    left: 0px; 
+    font-size: 30px;
+}
+#main #contents #watermelon, #strawberry{
+    width: 100%;
+}
+#main #contents h3{
+    color: red;
+    margin: 20px 0;
+}
+#main #contents #watermelon img, #strawberry img{
+    margin-top: 30px;
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 6px;
+}
+#contents #watermelon p, #strawberry p{
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 1.5;
+}
 
 /* border 스타일 */
 #contents h1{
@@ -148,7 +151,7 @@ footer #footer_menu li:last-child{
 }
 #contents table{
     width: 500px;
-    border: 2px solid /#ccc;
+    border: 2px solid #ccc;
     border-collapse:collapse;
     margin: 30px 0 150px;
 }
@@ -256,10 +259,6 @@ footer #footer_menu li:last-child{
         float: left;
         margin: 0 30px 50px 30px;
     }
-    #contents #watermelon p, #strawberry p{
-        line-height: 1.5;
-    }
-
 
 /* board 스타일 */
     #contents table{

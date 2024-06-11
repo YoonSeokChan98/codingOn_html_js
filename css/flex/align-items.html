@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-items 속성</title>
+    <style>
+        #wrap{
+            width: 300px;
+            height: 300px;
+            border: 2px solid #333;
+            background-color: #eee;
+            display: flex;
+            /* 수직 정렬
+                flex-start: 교차축(주축과 수직한 축)의 시작을 기준으로 위쪽에 정렬 / 위
+                center: 교차축(주축과 수직한 축)의 중앙에 정렬 / 가운데
+                flex-end: 교차축(주축과 수직한 축)의 끝을 기준으로 위쪽에 정렬 / 아래
+            */
+            /* align-items: flex-start; */
+            /* align-items: center; */
+            /* align-items: flex-end; */
+        }
+        #wrap div{
+            width: 100px;
+            padding: 5px 10px;
+            margin: 5px;
+        }
+        p{
+            /* 글자 가운데 정렬 */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>align-items 속성</h1>
+    <div id="wrap">
+        <div style="background-color: coral;"><p>A</p></div>
+        <div style="background-color: lightblue;"><P>B</P></div>
+        <div style="background-color: khaki;"><P>C</P></div>
+        <div style="background-color: pink;"><P>D</P></div>
+    </div>
+</body>
+</html>
