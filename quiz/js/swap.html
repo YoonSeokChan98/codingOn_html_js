@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대입 연산자 예제</title>
+</head>
+<body>
+    <script>
+        let a = 1, b = 2;
+        let temp; //임시변수
+
+        //출력
+        document.write("교환전<br>")
+        document.write("a=", a, ", b=", b)
+
+        // 교환 처리
+        temp = a; //temp = 1, a = 1, b = 2 
+        a = b; // temp = 1, a = 2, b = 2
+        b = temp; //temp = 1, a = 2, b = 1
+
+        //출력
+        document.write("<br>교환후<br>")
+        document.write("a=", a, ", b=", b, temp)
+    </script>
+</body>
+</html>
