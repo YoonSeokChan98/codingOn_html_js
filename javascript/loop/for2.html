@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배수의 합과 개수</title>
+</head>
+<body>
+    
+    <script>
+        // 자연수20 까지 3의 배수 출력
+        // 블럭 ({}) - 실행문이 1줄일 때 생략 가능함
+        // 3의 배수의 개수 세기
+        let num = Number(prompt("몇까지의 3배수를 계산할까요?"))
+        let count = 0;
+        for (let i=1; i<=num; i++) {
+            if(i % 3 === 0){
+                count = count + 1; // count++;
+                document.write(i + " ");
+            }
+        }
+        document.write("<br>3의 배수의 개수: " + count + "개")
+    </script>
+</body>
+</html>

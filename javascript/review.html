@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        // 문자형 변수 name에 Y0_0N 98을 저장
+        // let - 문자형
+        let name = "Y0_0N 98"; 
+
+        console.log(typeof(name)); //콘솔에 표기 됨
+
+        // window.alert("당신의 이름은 " + name + "이군요!")
+        // alert("당신의 이름은 " + name + "이군요!")
+        document.write("당신의 이름은 " + name + "이군요!")
+        document.write("<br>")
+
+        // let - 숫자형
+        let n1 = parseInt(prompt("첫 번째 숫자 입력: "));
+        let n2 = prompt("두 번째 숫자 입력: ");
+
+        // n1 = parseInt(n1); // 정수형으로 변환 / 형변환(문자 -> 숫자)
+        n2 = parseInt(n2);
+
+        console.log(typeof(n1));
+        document.write(n1 + n2 + "<br>");
+        document.write(n1 - n2 + "<br>");
+        document.write(n1 * n2 + "<br>");
+        document.write(n1 / n2 + "<br>");
+    </script>
+</body>
+</html>

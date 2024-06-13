@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 실습 예제</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        1. index가 2인 값 출력
+        2. 좋아하는 색을 마지막에 추가한 후 배열에 출력
+        */
+        let color = ["빨강", "초록", "파랑", "노랑", "검정", "보라", "노랑", "검정"];
+        
+        // 1.
+        console.log(color[2]);
+
+        // 2.
+        color.push("하양")
+
+        // 3.
+        console.log(color.indexOf("검정"));
+        console.log(color.lastIndexOf("검정"));
+
+        console.log(color);
+
+        // 4.
+        let color2 = color.reverse();
+        console.log(color);
+
+        // 5.
+        console.log(color.pop());
+        console.log(color);
+
+        /*
+        // 문자열 - 1차원 배열
+        let str = "hello world, welcome world"
+        // indexOf() - 앞에서 찾음
+        // lastIndexOf() - 앞에서부터 찾으면서 마지막에 발견된 기준
+        console.log(str.indexOf("world"));
+        console.log(str.indexOf("asia"));
+        console.log(str.lastIndexOf("world"));
+        */
+        
+    </script>
+</body>
+</html>

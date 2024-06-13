@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 배열 함수
+        let numbers = [1, 2, 3, 3, 5, 6];
+
+        // 데이터 추가
+
+        // 1. 인덱스로 추가
+        numbers[3] = 4;
+
+        // 2. 함수로 추가 (맨 뒤)
+        numbers.push(4);
+        document.write(numbers);
+        document.write("<br>");
+
+        // 데이터 삭제 (맨 뒤)
+        numbers.pop();
+        document.write(numbers);
+        document.write("<br>");
+
+        //데이터 전체 조회
+        for(let i=0; i < numbers.length; i++){
+            document.write(numbers[i]);
+        }
+        
+        /*
+            i=0 numbers[0] - 1
+            i=1 numbers[1] - 2
+            i=2 numbers[2] - 3
+        */
+    </script>
+</body>
+</html>

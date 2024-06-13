@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 객체</title>
+</head>
+<body>
+    
+    <script>
+    /*
+        1. 변수 (학생 3명의 성적)
+            - 이름이 다르고 많다.
+            - 메모리상에서 흩어져 있다.
+    */
+        let std1 = 80;
+        let std2 = 90;
+        let std3 = 70;
+
+
+        console.log(std1);
+        console.log(std2);
+        console.log(std3);
+        console.log(std1 + std2 + std3);
+
+    /*
+        배열
+            - 이름이 하나이다.
+            - 메모리에 연속적인 공간을 차지
+        배열을 선언 (대괄호 사용)
+        자료형 배열 이름 = [값1, 값2, 값3, ...]
+        값에 접근할 때 인덱스(위치) 사용
+    */
+        let std = [80, 90, 70];
+        console.log(std[0]);
+        console.log(std[1]);
+        console.log(std[2]);
+    
+
+        //장바구니 배열
+    //1. 선언과 함께 초기화
+
+        let cart = ["딸기", "콩나물", "계란", "자두"]
+
+        // 객체 출력 (전체)
+        // document.write(cart);
+        console.log(cart);
+
+        // 콩나물 출력 (특정한 값 검색)
+        console.log(cart[1]);
+
+        // 배열의 크기(길이)
+        console.log("배열의 크기: " + cart.length + "개");
+
+    // 2. 빈 배열을 생성
+        let seasons = [];
+
+        // 데이터 저장
+        seasons[0] = "봄";
+        seasons[1] = "여름";
+        seasons[2] = "가을";
+        seasons[3] = "겨울";
+
+
+        // 데이터 수정
+        seasons[0] = "spring";
+
+        // 전체 조회 (for)
+        console.log(seasons.length);
+        // document.write(seasons);
+        for(let i=0; i < seasons.length; i++){ // 0, 1, 2, 3
+            document.write(seasons[i] + "<br>");
+        }
+    </script>
+</body>
+</html>
