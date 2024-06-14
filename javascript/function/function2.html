@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 예제</title>
+</head>
+<body>
+    <h2>함수의 선언과 호출</h2>
+
+    <script>
+        // - 함수의 선언
+        /*
+        function 함수이름(){
+            실행문(기능 구현)
+        }
+        
+        function name(params) {
+            
+        }
+        */
+
+        // 매개변수가 없는 함수
+        /*
+        function sayHello() {
+            document.write("안녕하세요~ <br>")
+        }
+        */
+        // 이름이 없는 함수(익명 함수)
+        let sayHello = function(){
+            document.write("안녕하세요! <br>")
+        }
+
+        // 매개변수가 있는 함수
+        /*
+        function sayHello2(name) {
+            document.write("안녕하세요~ " + name + "<br>");
+        }
+        */
+        // 이름이 없는 함수(익명 함수)
+        let sayHello2 = function(name){
+            document.write("안녕하세요!" + name + "<br>")
+        }
+
+        let oneUp = function(x) {
+            document.write(x + 1 + "<br>");
+        }
+
+        let name = function(x) {
+            document.write(x * 2 + "<br>");
+        }
+
+        // 함수 호출(실행)
+        // console.log(typeof(sayHello));
+        sayHello();
+        sayHello();
+        sayHello2("이순신");
+        sayHello2(123);
+        sayHello2("신사임당");
+
+        oneUp(100);
+        oneUp(20);
+        oneUp(50);
+
+        name(6);
+    </script>
+</body>
+</html>

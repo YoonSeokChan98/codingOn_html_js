@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 예제</title>
+</head>
+<body>
+    <h1 id="headline" onclick="changeText()">여기를 클릭해 주세요</h1>
+    
+    <script>
+        let isBlue = false;
+
+        let changeText = function() {
+            let headline = document.getElementById("headline");
+            if (isBlue) {
+                headline.style.color = "black"; // 원래 색상 (검정색)
+            } else {
+                headline.style.color = "blue"; // 클릭 시 변경할 색상
+            }
+            isBlue = !isBlue; // 상태를 토글
+        }
+    </script>
+</body>
+</html>

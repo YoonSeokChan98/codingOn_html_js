@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 예제</title>
+</head>
+<body>
+    <h2>함수의 선언과 호출</h2>
+
+    <script>
+        // - 함수의 선언
+        /*
+        function 함수이름(){
+            실행문(기능 구현)
+        }
+        
+        function name(params) {
+            
+        }
+        */
+        
+        // 매개변수가 없는 함수
+        function sayHello() {
+            document.write("안녕하세요~ <br>")
+        }
+
+        // 매개변수가 있는 함수
+        function sayHello2(name) {
+            document.write("안녕하세요~ " + name + "<br>");
+        }
+        // 함수 호출
+        sayHello();
+        sayHello();
+        sayHello2("이순신");
+        sayHello2("신사임당");
+    </script>
+</body>
+</html>

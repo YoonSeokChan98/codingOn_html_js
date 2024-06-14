@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch문</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        초기값
+        switch(값){
+            case 값:
+                실행문
+                break;
+            case 값:
+                break;
+            default:
+                실행문
+                break;
+        }
+        */
+        let rank = 1;
+
+        /*
+        switch (rank) { // ()안의 값을 매개(전달) 변수
+            case 1:
+                document.write("금메달입니다.<br>")
+                break;
+            case 2:
+                document.write("은메달입니다.<br>")
+                break;
+            case 3:
+                document.write("동메달입니다.<br>")
+                break;
+        
+            default:
+                document.write("메달이 없습니다.<br>")
+                break;
+        }
+        */
+
+        // if문 호환
+        if (rank === 1) {
+            document.write("금메달입니다.<br>")
+        }else if(rank === 2){
+            document.write("은메달입니다.<br>")
+        }else if(rank === 3){
+            document.write("동메달입니다.<br>")
+        }else{
+            document.write("메달이 없습니다.<br>")
+        }
+    </script>
+</body>
+</html>

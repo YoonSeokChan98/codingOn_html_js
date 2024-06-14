@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수의 유효범위</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        변수의 유효범위 (scope)
+        지역변수(local variable) - 매개변수
+        전역변수(global variable) - 전역변수
+
+        전역변수는 함수나 제어문에서 생성되고
+        프로그램이 종료되면 소멸한다.
+        전역변수는 값을 공유하고 유지하는 속성을 가짐
+        */
+        let x = 1; // 전역변수
+        let oneUp = function(){
+            x++; //x += x; // x = x + 1;
+            return x;
+        }
+
+        console.log(oneUp()); // 2, x=2
+        console.log(oneUp()); // 3
+        console.log(x);
+    </script>
+</body>
+</html>
