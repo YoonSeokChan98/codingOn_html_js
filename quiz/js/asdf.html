@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function, If, For 활용 과제</title>
+
+    <style>
+      table tr td {
+        width: 50px;
+      }
+      table tr td button {
+        width: 100%;
+      }
+    </style>
+
+    <script>
+      function setNumber(num) {}
+
+      function setSign(sign) {}
+
+      function calculateResult() {
+        let result; //?
+
+        alert("결과는 : " + result); //?
+      }
+
+      function clearCalculator() {}
+    </script>
+  </head>
+  <body>
+    <table border="1"> <!-- ? -->
+      <tr>
+        <td colspan="3">
+          <button onClick="clearCalculator()">AC</button>
+        </td>
+        <td>
+          <button onClick="setSign('/')">/</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onClick="setNumber(7)">7</button>
+        </td>
+        <td>
+          <button onClick="setNumber(8)">8</button>
+        </td>
+        <td>
+          <button onClick="setNumber(9)">9</button>
+        </td>
+        <td>
+          <button onClick="setSign('*')">*</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onClick="setNumber(4)">4</button>
+        </td>
+        <td>
+          <button onClick="setNumber(5)">5</button>
+        </td>
+        <td>
+          <button onClick="setNumber(6)">6</button>
+        </td>
+        <td>
+          <button onClick="setSign('-')">-</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onClick="setNumber(1)">1</button>
+        </td>
+        <td>
+          <button onClick="setNumber(2)">2</button>
+        </td>
+        <td>
+          <button onClick="setNumber(3)">3</button>
+        </td>
+        <td>
+          <button onClick="setSign('+')">+</button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button onClick="setNumber(0)">0</button>
+        </td>
+        <td>
+          <button onClick="setNumber('.')">.</button>
+        </td>
+        <td>
+          <button onClick="setSign('=')">=</button>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+    <br />
+    <br />
+    <p style="font-size: 12px">
+      [계산기 구현]<br />
+      1. table과 button으로 계산기 구현<br /><br />
+
+      [동작 구현] <br />
+      1. onClick과 function을 활용할 것<br />
+      2. 2가지 방법으로 풀이할 것<br />
+      &nbsp;&nbsp;&nbsp;1) eval() 함수 활용<br />
+      &nbsp;&nbsp;&nbsp;2) eval() 함수 미활용
+    </p>
+  </body>
+</html>

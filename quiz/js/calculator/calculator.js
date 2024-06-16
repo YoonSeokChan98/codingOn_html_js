@@ -8,6 +8,7 @@ let clearCalc = function(){
     prevNum = '';
 }
 
+sumNum = " ";
 let number = function(num){
     sumNum += num;
     console.log("입력숫자: " + sumNum);
@@ -43,4 +44,3 @@ let calculate = function(){
     alert("결과는: " + result);
     clearCalc(); // 계산 후 초기화
 }
-clearCalc()

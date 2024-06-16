@@ -8,6 +8,7 @@ let clearCalc = function(){
     prevNum = '';
 }
 
+sumNum = " ";
 let number = function(num){
     sumNum += num;
     console.log("입력숫자: " + sumNum);
@@ -21,26 +22,8 @@ let sign = function(sin){
 }
 
 let calculate = function(){
-    let num1 = Number(prevNum);
-    let num2 = Number(sumNum);
-    let result;
-    switch(oper){
-        case "*":
-            result = num1 * num2;
-            break;
-        case "/":
-            result = num1 / num2;
-            break;
-        case "+":
-            result = num1 + num2;
-            break;
-        case "-":
-            result = num1 - num2;
-            break;
-        default:
-            result = "Error";
-    }
+    let expression = prevNum + oper + sumNum;
+    let result = eval(expression);
     alert("결과는: " + result);
     clearCalc(); // 계산 후 초기화
 }
-clearCalc()
