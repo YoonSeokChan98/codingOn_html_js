@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 제어</title>
+</head>
+<body>
+    
+    <script>
+    /* 
+        반복 조건문
+        초기값;
+        while(true){
+            if(조건식)
+                break;
+            }
+            증감값;
+            실행문;
+        }
+    */
+        let i = 0;
+        let sum = 0;
+        while (true) {
+            i++;
+            sum += i;
+            document.write(i + " ");
+            /*
+            i값 출력 boolean
+            i=1 1 false
+            i=2 2 false
+            i=3 3 false
+            .
+            .
+            .
+            if (i === 10) { // 종료를 시킬 break;가 없기 때문에 이 코드는 계속해서 반복 됨 / cpu 터질려함;
+                break;
+            }
+            */
+        }
+            document.write("<br> 합계: " + sum);
+    </script>
+</body>
+</html>
