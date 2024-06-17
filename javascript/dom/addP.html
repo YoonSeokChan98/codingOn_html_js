@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 노드 추가하기</title>
+</head>
+<body>
+    <div id="container">
+        <h2>DOM 노드 추가하기</h2>
+        <a href="#" onclick="addP(); this.onclick='' ">더 보기</a>
+        <div id="info">
+            <!-- p태그 생성함 -->
+        </div>
+    </div>
+    
+    <script>
+        // let addP = funcion(){
+        let addP = () => {
+            // 부모 선택
+            let div = document.querySelector("#info");
+            // 자식생성
+            let newP = document.createElement("p");
+            newP.innerText = "숨겨진 텍스트입니다.";
+            // 부모와 자식을 연결
+            div.appendChild(newP);
+        }
+    </script>
+</body>
+</html>

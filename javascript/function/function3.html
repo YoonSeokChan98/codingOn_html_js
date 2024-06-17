@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>함수의 정의와 호출</h2>
+
+    <script>
+        // 1을 더하는 함수 정의
+
+        /*
+        function addOne(x){
+            return x + 1;
+        }
+        */
+
+        // 익명함수
+        /*
+        let addOne = function(x){
+            return x + 1;
+        }
+        */
+
+        // 화살표 함수
+        // x(지역변수 - 매개변수)는 호출된 후 ...?  / 필기놓침;
+        let addOne = (x) => {
+            return x + 1;
+        }
+
+        // addOne() 호출
+        console.log(addOne(10));
+        // console.log(x);
+
+        // 전역변수 사용 (위치 - 함수나 제어문 위에 위치함)
+        // 값이 공유되고 프로그램 종료시 메모리에서 소멸
+        let y = 1;
+        let mulOne = function(){
+            y = y * 2;
+            return y;
+        }
+        console.log(mulOne()); // 1*2=2
+        console.log(mulOne()); // 2*2=4
+        console.log(mulOne()); // 4*2=8
+        console.log(y); // y의 값은 마지막 계산 값인 8이 나온다
+
+
+    </script>
+</body>
+</html>

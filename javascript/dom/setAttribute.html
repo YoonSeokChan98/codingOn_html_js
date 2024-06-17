@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>태그 속성 설정하기</h2>
+    <div class="pic">
+        <div>
+            <img src="images/oranges-7396082_640.jpg" alt="귤" class="big">
+        </div>
+        <div>
+            <img src="images/peach-2632182_640 copy.jpg" alt="복숭아" class="small">
+        </div>
+    </div>
+    <script>
+        let bigPic = document.querySelector(".big");
+        let smallPic = document.querySelector(".small");
+        
+        smallPic.onclick = function(){
+            bigPic.setAttribute("src", "images/peach-2632182_640 copy.jpg");
+        }
+    </script>
+</body>
+</html>

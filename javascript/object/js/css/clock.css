@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /* vh: view height(1500px / 100 = 15px) */
+    height: 100vh;
+    display: flex;
+    /* 좌우 가운데 정렬 */
+    justify-content: center;
+    /* 상하 가운데 정렬 */
+    align-items: center;
+
+}
+#container{
+    border: 2px solid rgb(194, 0, 0);
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgb(194, 0, 0);
+}
+#container div{
+    margin: 10px;
+}
+#today{
+    font-size: 1.2em;
+    font-weight: 800;
+    color: #fff;
+}
+#clock{
+    font-size: 1.1em;
+    font-weight: 800;
+    color: #fff;
+}

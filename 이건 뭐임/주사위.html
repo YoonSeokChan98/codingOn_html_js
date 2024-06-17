@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll the Dice</title>
+    <!-- chatGPT가 만든거임 -->
+    <style>
+        /* styles.css */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .dice {
+            font-size: 100px;
+            margin-bottom: 20px;
+            transition: transform 1s;
+        }
+
+        @keyframes roll {
+            0% { transform: rotate(0); }
+            25% { transform: rotate(90deg); }
+            50% { transform: rotate(180deg); }
+            75% { transform: rotate(270deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="dice" class="dice">🎲</div>
+        <button id="rollButton">Roll the Dice</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        // script.js
+        document.getElementById('rollButton').addEventListener('click', function() {
+            const dice = document.getElementById('dice');
+            const result = document.getElementById('result');
+            const rollResult = Math.floor(Math.random() * 6) + 1;
+
+            // 주사위 굴리는 애니메이션 시작
+            dice.style.animation = 'roll 1s';
+            
+            // 1초 후에 애니메이션을 멈추고 결과를 표시
+            setTimeout(() => {
+                dice.style.animation = '';
+                result.textContent = 'You rolled a ' + rollResult;
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -49,15 +49,37 @@
         */
         
         // 어떤 수가 짝수인지 홀수인지 판별하는 프로그램
-        let num = prompt("숫자를 입력하세요", "1");
-        num = Number(num);  //문자를 숫자로 형변환
-        document.write("<br>" + num + "은(는) ")
-        if (num % 2 === 0) {
-            document.write("짝수 입니다.")
-        } else {
-            document.write("홀수 입니다.")
-        }
+        // 취소버튼을 누르거나 또는 문자를 입력했을 때 음수를 입력시 취소
+        let num = prompt("숫자를 입력하세요", "1");  // NaN: not a number
+        if (num !== null && num >= 0 && !isNaN(num)){
+            num = Number(num);  //문자를 숫자로 형변환
+            document.write("<br>" + num + "은(는) ")
+            if (num % 2 === 0) {
+                document.write("짝수 입니다. <br>")
+            } else {
+                document.write("홀수 입니다. <br>")
+            }
+            // document.write("입력된 수는", num, "입니다.")
+        document.write(`입력된 수는 ${num}입니다.`)
 
+        } else {document.write("입력이 취소되었습니다.")
+        }
+        // 취소 버튼을 누르거나 또는 문자를 입력했을 때 취소처리
+        /*
+        if(num == null || isNaN(num) || num < 0){
+            document.write("입력이 취소되었습니다.")
+        }else{
+            num = Number(num);  //문자를 숫자로 형변환
+            document.write("<br>" + num + "은(는) ")
+            if (num % 2 === 0) {
+                document.write("짝수 입니다. <br>")
+            } else {
+                document.write("홀수 입니다. <br>")
+            }
+            document.write("입력된 수는", num, "입니다.")
+        }
+        */
+        
     </script>
 </body>
 </html>
