@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 예제</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <p>
+        <button id="id1">클릭하면 메시지를 변경합니다.</button>
+    </p>
+    <div id="id2">메시지</div>
+
+    <script>
+        $(()=>{
+            $('#id1').click(()=>{
+                $('#id2').text("메시지가 변경되었습니다.")
+                        .css({backgroundColor: "pink", padding: "10px"});
+            });
+
+            msg1(); // 함수 호출 / 항상 alert이 먼저 실행 됨
+        });
+
+        function msg1(){
+            alert("문서 로드 후 자동으로 알림창을 표시합니다.")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- javascript의 객체의 속성인  onclick 이용해서 이벤트 실행 -->
+    <div id="content">
+        <img src="images/peach-2632182_640 copy.jpg" alt="복숭아" id="fruit"> 
+    </div>
+
+    <script>
+        let fruitImg = document.querySelector("#fruit");
+        // changPic 함수에서 ()를 하면 함수 맨위로 올라가서 실행된다 / js 객체로 만드는 경우에는 괄호() 즉 함수를 주게 되었을 때 먼저 작동을 하게 됨
+        // 함수 정의
+        function changePic(){
+            fruitImg.src = "images/blueberry-3357568_640.jpg";
+        }
+
+        // 함수 호출
+        fruitImg.onclick = changePic; //changePic() 함수 활용
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener() 함수 예제</title>
+</head>
+<body>
+    <div id="content">
+        <img src="images/peach-2632182_640 copy.jpg" alt="복숭아"
+            onclick="changePic()" id="fruit"> 
+    </div>
+
+
+    <script>
+        let fruitImg = document.querySelector("#fruit");
+
+        // 실행 함수 (익명 함수)
+        fruitImg.addEventListener('mouseover', () => {
+            fruitImg.src = "images/blueberry-3357568_640.jpg";
+        })
+
+        fruitImg.addEventListener('mouseout', function(){
+            fruitImg.src = "images/peach-2632182_640 copy.jpg";
+        })
+    </script>
+</body>
+</html>

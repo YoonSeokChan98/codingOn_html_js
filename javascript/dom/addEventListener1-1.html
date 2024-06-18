@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener() 함수 예제</title>
+</head>
+<body>
+    <div id="content">
+        <img src="images/peach-2632182_640 copy.jpg" alt="복숭아"
+            onclick="changePic()" id="fruit"> 
+    </div>
+
+
+    <script>
+        let fruitImg = document.querySelector("#fruit");
+
+        // 1. 함수를 정의하고 / function 함수(){}
+        function changePic(){
+            fruitImg.src = "images/blueberry-3357568_640.jpg";
+        }
+
+        function originPic(){
+            fruitImg.src = "images/peach-2632182_640 copy.jpg";
+        }
+
+        // 2. 함수를 호출한다 / fruitImg.addEventListener('mouseover', 함수);
+        // on 접두사를 생략한다, 두 번째인자에 함수
+        // mouseover - 마우스를 올렸을 때 이벤트 발생
+        fruitImg.addEventListener('mouseover', changePic);
+        // mouseout -  마우스가 벗어났을 때 이벤트 발생
+        fruitImg.addEventListener('mouseout', originPic);
+    </script>
+</body>
+</html>

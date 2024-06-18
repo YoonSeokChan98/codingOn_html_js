@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- html 태그로 onclick 이용 -->
+    <div id="content">
+        <img src="images/peach-2632182_640 copy.jpg" alt="복숭아"
+            onclick="changePic()" id="fruit"> 
+    </div>
+
+    <script>
+        function changePic(){
+            let fruitImg = document.querySelector("#fruit");
+            fruitImg.src = "images/blueberry-3357568_640.jpg";
+        }
+    </script>
+</body>
+</html>

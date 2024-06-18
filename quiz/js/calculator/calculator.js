@@ -21,6 +21,7 @@ let sign = function(sin){
     console.log("입력문자: " + sin);
 }
 
+
 let calculate = function(){
     let num1 = Number(prevNum);
     let num2 = Number(sumNum);
