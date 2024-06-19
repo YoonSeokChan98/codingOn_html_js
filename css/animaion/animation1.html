@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 50px;
+            width: 100px;
+            height: 100px;
+            float: left;
+            /* 애니메이션 이름 지정 */
+            /* animation-name: changBg; */
+            /* 애니메이션의 지속 시간 */
+            /* animation-duration: 1.5s; */
+            /* 반복 횟수 */
+            /* animation-iteration-count: 2; */
+            /* 무한반복 */
+            /* animation-iteration-count: infinite; */
+        }
+        
+        #box1{
+            background-color: aqua;
+            animation: changeBg 3s infinite;
+        }
+
+        #box2{
+            animation: changeBg2 3s infinite;
+        }
+
+        #box3{
+            background-color: pink;
+            animation-name: rotate;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes 예시 {
+            /* from = 0% */
+            from{
+                background-color: red;
+                border-radius: 0;
+            /* to = 100% */
+            }to{
+                background-color: blue;
+                /* 100px * 30% */
+                border-radius: 30%;
+            }
+        }
+
+        @keyframes changeBg {
+            0%{
+                background-color: red;
+                border-radius: 10%;
+            }50%{
+                background-color: blue;
+                /* 100px * 30% */
+                border-radius: 50%;
+            }100%{
+                background-color: red;
+                border-radius: 10%;
+            }
+        }
+
+        @keyframes changeBg2 {
+            0%{
+                background-color: blue;
+                border-radius: 10%;
+            }50%{
+                background-color: red;
+                /* 100px * 30% */
+                border-radius: 50%;
+            }100%{
+                background-color: blue;
+                border-radius: 10%;
+            }
+        }
+
+        @keyframes rotate {
+            from{
+                transform: rotate(0);
+            }to{
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        // onload 환경
+        $(()=>{
+            // $('#name').css('background-color', 'lightgreen'); // css 방법
+            $('#name').css({backgroundColor: 'lightgreen', fontSize: '20px'}); // vallue방법 
+            //                                                                    css를 2개 이상 넣을 때에는 카멜 표기법으로 바꿔줘야 함
+            // append()는 선택한 요소의 자식 요소 끝에 추가됨
+            $('.info').append('<p>만나서 반가워요</p>'); // p태그를 추가하는 방법
+            $('.pic').html('<img src="images/blueberry.jpg" alt="블루베리">'); // ''안에는 ""로 넣어야 함 예) ' 000 "111" '
+            //$('.pic img').css({borderRadius: "20px"});
+            $('.pic img').css('border-radius', '20px');
+        });
+    </script>
+</head>
+<body>
+    <h2>방문을 환영합니다</h2>
+    <div class="info">
+        <p id="name">저의 이름은 윤석찬입니다.</p>
+        <p>저는 서울에 살아요</p>
+        <!-- p -->
+    </div>
+    <div class="pic"></div>
+</body>
+</html>
