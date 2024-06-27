@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체와 json의 호환</title>
+</head>
+<body>
+    <script>
+        // 객체 - {} 사용, key:value 형태
+        let fruit_obj = {
+            name: "apple",
+            color: "red"
+        }
+        console.log(fruit_obj);
+
+        // json은 데이터의 양식(표준)이다.
+
+        // 객체 -> json / stringify(객체) -> json
+        let fruit_json = JSON.stringify(fruit_obj);
+        console.log(fruit_json);
+
+        // json -> 객체 / parse(json) -> 객체
+        let fruit_obj2 = JSON.parse(fruit_json);
+        console.log(fruit_obj2);
+        
+
+    </script>
+</body>
+</html>

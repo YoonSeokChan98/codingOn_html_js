@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <style>
+    table {
+      width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    table td {
+      border: 1px solid;
+      
+      width: 100px;
+      height: 100px;
+      color: black;
+    }
+
+    table tr>th:first-child,
+    table tr>td:first-child {
+      color: red;
+    }
+
+    tr>th:last-child,
+    tr>td:last-child {
+      color: blue;
+    }
+
+    tr>td>p:hover {
+      cursor: pointer;
+    }
+    input{
+      /* outline: none; */
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <!-- readonly - 읽기전용 -->
+    날짜: <input type="text" id="date" readonly> <br>
+    내용: <input type="text" id="content"> <br>
+    <!--  -->
+    <button type="button" onclick="writeSchedule()">작성</button>
+    <div style="font-size: 2em; color: green; text-align: center;">
+      2024년 6월
+    </div>
+    <br>
+
+    <table>
+      <tr>
+        <th>일</th>
+        <th>월</th>
+        <th>화</th>
+        <th>수</th>
+        <th>목</th>
+        <th>금</th>
+        <th>토</th>
+      </tr>
+      <tr>
+        <td>
+          <p></p>
+        </td>
+        <td>
+          <p></p>
+        </td>
+        <td>
+          <p></p>
+        </td>
+        <td>
+          <p></p>
+        </td>
+        <td>
+          <p></p>
+        </td>
+        <td>
+          <p></p>
+        </td>
+        <td>
+          <p>1</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>2</p>
+        </td>
+        <td>
+          <p>3</p>
+        </td>
+        <td>
+          <p>4</p>
+        </td>
+        <td>
+          <p>5</p>
+        </td>
+        <td>
+          <p>6</p>
+        </td>
+        <td>
+          <p>7</p>
+        </td>
+        <td>
+          <p>8</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>9</p>
+        </td>
+        <td>
+          <p>10</p>
+        </td>
+        <td>
+          <p>11</p>
+        </td>
+        <td>
+          <p>12</p>
+        </td>
+        <td>
+          <p>13</p>
+        </td>
+        <td>
+          <p>14</p>
+        </td>
+        <td>
+          <p>15</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>16</p>
+        </td>
+        <td>
+          <p>17</p>
+        </td>
+        <td>
+          <p>18</p>
+        </td>
+        <td>
+          <p>19</p>
+        </td>
+        <td>
+          <p>20</p>
+        </td>
+        <td>
+          <p>21</p>
+        </td>
+        <td>
+          <p>22</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>23</p>
+        </td>
+        <td>
+          <p>24</p>
+        </td>
+        <td>
+          <p>25</p>
+        </td>
+        <td>
+          <p>26</p>
+        </td>
+        <td>
+          <p>27</p>
+        </td>
+        <td>
+          <p>28</p>
+        </td>
+        <td>
+          <p>29</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>30</p>
+        </td>
+        <td>
+          <p></p>
+        </td>
+        <td>
+          <p></p>
+        </td>
+        <td>
+          <p></p>
+        </td>
+        <td>
+          <p></p>
+        </td>
+        <td>
+          <p></p>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      // this를 기억하기 위한 전역변수
+      let target;
+
+      $('td > p').on('click', function() {
+        //this는 클릭된 대상임 / 
+        console.log(this);
+        // 날짜만 가져오려면 this의 text값을 가져와야 함 / 예) <p>30</p> 30 | <p>this</p> text
+        console.log($(this).text());
+
+        // 날짜, 내용 input 선택
+        // let date = $(this).text();
+        $('#date').val($(this).text());
+
+        // target에 this 기억해두기
+        target = this;
+      })
+
+      function writeSchedule() {
+        let content = $('#content').val();
+
+        // 요소 추가
+        // append() - 부모요소에 자식요소의 끝(마지막) 부분에 추가
+        $(target).parent().append('<span>' + content + '</span><br>');
+        
+
+        // 초기화
+        $('#content').val("");
+        $('#date').val("");
+      }
+    </script>
+  </div>
+</body>
+
+</html>
