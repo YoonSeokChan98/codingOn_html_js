@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 배열 구조 분해 할당
+        // 배열
+        const lists = ['apple', 'grape', function () {}, 'banana'];
+        // 기존 방식
+        console.log(lists[0],lists[1],lists[2]);
+
+        // 배열 구조 분해(순서가 매우 중요)
+        let [item1, item2 , item3, item4 = 'peach'] = lists;
+        // let item1 = "apple" 이라고 생각하면 됨
+        console.log("item1: ", item1, "item2: ", item2, "item3: ", item3, );
+        console.log("item4: ", item4);
+
+        item1 = 'banana';
+        console.log("item1: ", item1);
+
+        // 교환
+        let x = 1, y = 2;
+        [x, y] = [y, x];
+        
+        console.log(x, y);
+        // x=2, y=1
+    </script>
+</body>
+</html>
