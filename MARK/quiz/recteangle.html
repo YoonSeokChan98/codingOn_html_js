@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Shape {
+            constructor(w, h){
+                this.w = w;
+                this.h = h;
+            }
+            getArea(){
+                return this.w * this.h; // 반환하는 함수....
+            }
+        }
+
+        let rec1 = new Shape(3, 4);
+        // console.log(rec1.getArea());
+
+        class Rectangle extends Shape {
+            /*
+            // 속성을 추가할 것이 아니기에 constructor를 안해도 됨
+            constructor(w, h){
+                super(w, h);
+            }
+            */
+            getDiagonal(){
+                return Math.sqrt((this.w**2)+(this.h**2));
+            }
+        }
+
+        let rec2 = new Rectangle(3, 4);
+        console.log(rec2.getDiagonal());
+        console.log(rec2.getArea());
+    </script>
+</body>
+</html>

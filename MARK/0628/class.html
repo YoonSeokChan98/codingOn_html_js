@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // class
+        class Cat {
+            // 생성자: 클래스의 인스턴스 생성시 생성되는것(선택) / constructor( 매게변수 ){}
+            constructor( name, age ) {
+                // 속성 var, const, let 이용 안하는게 일반적
+                this.name = name;
+                this.age = age;
+            }
+            // 메소드(function 키워드를 사용하지 않음)
+            mew() {
+                console.log(this.name, '야옹');
+            }
+            eat() {
+                console.log('먹이를 먹습니다');
+            }
+        }
+
+        const cat1 = new Cat('나비', 1);
+        cat1.mew();
+        cat1.eat();
+        console.log(cat1);
+
+        const cat0 = new Cat(); // 인자를 넣지 않았기에 undefined라고 뜨게됨
+        cat0.mew();
+
+        // 상속
+        class House {
+            constructor(str) {
+                this.str = str;
+            }
+            name(){
+                console.log(`${this.str}삽니다.`);
+            }
+            door(){
+                console.log(`문을 열고 닫습니다`);
+            }
+            window(){
+                console.log(`창문을 열고 닫습니다`);
+            }
+        }
+
+        const myHouse = new House(`아파트`);
+        myHouse.name();
+        myHouse.door();
+        myHouse.window();
+
+        class Apartment extends House {
+            // super(): 부모 클래스의 생성자를 자식 클래스 생성자에서 호출 할 때 super()를 씀
+            // super() 사용 시 부모클래스의 생성자에 필요한 인수들을 모두 써줘야 함
+            // 만약 자식클래스에서 생성자가 필요없다면 생성자를 안써줘도 됨. 이때는 자동으로 부모클래스의 생성자를 호출
+            constructor(str, floor) {
+                super(str); // 제일 위에 와야함
+                this.floor = floor;
+            }
+            elevater() {
+                console.log(`${this.floor}층까지 승강기가 있습니다`);
+            }
+            // 메서드 오버라이딩: 자식 클래스에서 부모 클래스의 메서드를 재정의 할 때 사용하는 용어 / 원래의 메서드를 똑같이 작성하고 바꿔주면 됨
+            window() {
+                super.window(); // super키워드를 사용하여 부모 클래스의 메서드에 접근
+                console.log('창문을 슬라이딩 합니다');
+            }
+        }
+
+        const myApart = new Apartment("레미안 아파트", 20);
+        myApart.name();
+        myApart.elevater();
+        myApart.window();
+
+
+
+    </script>
+</body>
+</html>
