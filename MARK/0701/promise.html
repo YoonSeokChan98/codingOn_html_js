@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // promise함수
+        function promiseFunc(flag){ // flag란 true, false값을 구현한다는 것
+            return new Promise(function(resolve, reject){
+            // return new Promise((resolve, reject) => {}) 화살표 함수
+                if (flag) {
+                    resolve('promise 상태는 fulfilled!, then으로 연결됩니다.');
+                }else{
+                    reject('promise 상태는 rejecred!, chatch로 연결됩니다.');
+                }
+            });
+        }
+
+        // 사용법
+        promiseFunc(true)
+            .then((masege)=>{
+            console.log(masege);
+            })
+            .catch((err)=>{
+                console.log(err);
+            });
+
+        // 마트 예제
+        function goMart() {
+            console.log('마트에 가서 어떤 음료를 살지 고민한다');
+        }
+        // promise함수 생성
+        function pinkDrink() {
+            return new Promise((resolve, reject)=>{
+                setTimeout(()=>{
+                    console.log('고민 끝')
+                    product = '코카콜라'
+                    prise = 2000
+                    resolve();
+                }, 2000)
+            })
+        }
+        function pay() {
+            console.log(`상품명: ${product}, 가격: ${prise}`);
+        }
+        
+        let product;
+        let prise;
+        goMart();
+        pinkDrink().then(pay);
+
+        // Pay를 만들지 않고 직접 작성해서 만들 수도 있음
+        /*
+        pinkDrink().then(()=>{
+            console.log(`상품명: ${product}, 가격: ${prise}`);
+        })
+        */
+    </script>
+</body>
+</html>

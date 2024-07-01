@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //콜백지옥
+            /*
+            setTimeout(() => {
+                document.body.style.backgroundColor = 'red';
+                setTimeout(() => {
+                    document.body.style.backgroundColor = 'orange';
+                    setTimeout(() => {
+                        document.body.style.backgroundColor = 'yellow';
+                        setTimeout(() => {
+                            document.body.style.backgroundColor = 'green';
+                            setTimeout(() => {
+                                document.body.style.backgroundColor = 'blue';
+                                setTimeout(() => {
+                                    document.body.style.backgroundColor = 'navy';
+                                    setTimeout(() => {
+                                        document.body.style.backgroundColor = 'purple';
+                                    });
+                                }, 2000);
+                            }, 2000);
+                        }, 2000);
+                    }, 2000);
+                }, 2000);
+            }, 2000);
+            */
+            
+            function hell(a, b) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(()=>{
+                        document.body.style.backgroundColor = a;
+                        resolve()
+                    }, b)
+                })
+            }
+
+            /*
+            // then 체이닝
+            hell('red', 1000)
+                .then(()=>{
+                    return hell('orange', 2000)
+                })
+                .then(()=>{
+                    return hell('yellow', 2000)
+                })
+                .then(()=>{
+                    return hell('green', 2000)
+                })
+                .then(()=>{
+                    return hell('blue', 2000)
+                })
+                .then(()=>{
+                    return hell('navy', 2000)
+                })
+                .then(()=>{
+                    return hell('purple', 2000)
+                })
+            */
+            
+            async function rainbow() {
+                await hell('red', 1000)
+                await hell('orange', 1000)
+                await hell('yellow', 1000)
+                await hell('green', 1000)
+                await hell('blue', 1000)
+                await hell('navy', 1000)
+                await hell('purple', 1000)
+            }
+            rainbow();
+        </script>
+    </body>
+</html>
