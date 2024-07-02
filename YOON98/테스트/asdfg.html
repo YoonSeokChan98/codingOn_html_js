@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 마트 예제
+        function goMart() {
+            console.log('마트에 가서 어떤 음료를 살지 고민한다');
+        }
+        // promise함수 생성
+        function pinkDrink() {
+            return new Promise((resolve, reject)=>{
+                setTimeout(()=>{
+                    console.log('고민 끝')
+                    let random = Math.random() > 0.5;
+                    if (random) {
+                        product = '코카콜라'
+                        prise = 2000
+                        resolve();
+                    } else {
+                        product = '펩시콜라'
+                        prise = 1500
+                        reject();
+                    }
+                }, 2000)
+            })
+        }
+        function pay() {
+            console.log(`상품명: ${product}, 가격: ${prise}`);
+        }
+        function pay2() {
+            console.log(`상품명22: ${product}, 가격: ${prise}`);
+        }
+        
+        let product;
+        let prise;
+        goMart();
+        pinkDrink()
+        .then(pay)
+        .catch(pay2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function kdt() {
+            console.log('코딩온 입니다.');
+        }
+
+        function ysc(cb) { //cb는 개발자들 끼리의 약속임
+            setTimeout(() => {
+                console.log('안녕하세요');
+                name = '윤석찬';
+                age = 27;
+                cb(name, age);
+            }, 1000);
+        }
+
+        function my(name, age) {
+            console.log(`이름: ${name}, 나이: ${age}`);
+        }
+
+        let name; // 전역변수를 주기 위함
+        let age; // 이 이후에 사용 하기 위해 전역 변수를 주었음
+        my();
+        ysc(my);
+        console.log(name);
+
+
+        function kdt13() {
+            setTimeout(() => {
+                console.log("13",name);
+            }, 1000);
+        }
+        
+        kdt13()
+    </script>
+</body>
+</html>

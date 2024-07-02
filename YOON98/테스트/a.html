@@ -6,6 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        // promise함수
+        function promiseFunc(flag){ // flag란 true, false값을 구현한다는 것
+            return new Promise(function(resolve, reject){
+            // return new Promise((resolve, reject) => {}) 화살표 함수
+                if (flag) {
+                    console.log('고민 끝')
+                    product = '코카콜라'
+                    prise = 2000   
+                    resolve('promise 상태는 fulfilled!, then으로 연결됩니다.');
+                }else{
+                    reject('promise 상태는 rejecred!, chatch로 연결됩니다.');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
