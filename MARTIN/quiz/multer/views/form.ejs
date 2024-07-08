@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="submitFunc(event)" name="btn-form">
+        <input type="text" name="id" placeholder="아이디" required /><br />
+        <input type="password" name="password" placeholder="비밀번호" required /><br />
+        <input type="text" name="username" placeholder="이름" required /><br />
+        <input type="text" name="age" placeholder="나이" required /><br />
+        <input type="file" name="userFile" /><br />
+        <br />
+        <button type="button" onclick="submitFunc(event)">버튼</button>
+    </form>
+    <div class="profileBox"></div>
+
+    <script>
+        const profile = document.querySelector('profileBox')
+        
+
+        function submitFunc(event) {
+            console.log(event);
+            event.preventDefault();
+            const form = document.forms['btn-form'];
+            console.log(form);
+            console.log(form.id.value);
+            console.log(form.password.value);
+            console.log(form.username.value);
+            console.log(form.age.value);
+            console.log(form.userFile.value);
+            axios({
+                method: 'POST',
+                url: '/upload/axios',
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                },
+            }).then((res)=>{
+                console.log('res', res);
+                const file = res.data.file.path
+                const id = res.data.id.id
+                const pw = res.data.password.password
+                const name = res.data.username.username
+                const age = res.data.age.age
+                profile.innerHTML = 
+                ` ${file}<br /> 
+                ${id}님 환영합니다!<br /> 
+                비밀번호: ${pw}<br /> 
+                이름: ${name}<br /> 
+                나이: ${age} `
+            });
+        };
+    </script>
+</body>
+</html>

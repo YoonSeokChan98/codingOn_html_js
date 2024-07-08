@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <form name="formGet">
+        <label for="name">이름</label>
+        <input type="text" id="name" required /><br />
+        <fieldset>
+            <legend>성별</legend>
+            <input type="radio" name="gender" id="male" value="남자">
+            <label for="male">남자</label>
+            <input type="radio" name="gender" id="female" value="여자">
+            <label for="female">여자</label>
+        </fieldset>
+        <br />
+        <fieldset>
+            <legend>생년월일</legend>
+            <select name="birthYear" id="birthYear">
+                <% for(let i=1970; i <= 2024; i++){ %>
+                    <option value="<%= i %>"> <%= i %> </option>
+                <% } %>
+            </select>
+            <label for="birthYear">년</label>
+
+            <select name="birthMonth" id="birthMonth">
+                <% for(let i=1; i <= 12; i++){ %>
+                    <option value="<%= i %>"> <%= i %> </option>
+                <% } %>
+            </select>
+            <label for="birthMonth">월</label>
+
+            <select name="birthDay" id="birthDay">
+                <% for(let i=1; i <= 31; i++){ %>
+                    <option value="<%= i %>"> <%= i %> </option>
+                <% } %>
+            </select>
+            <label for="birthDay">일</label>
+        </fieldset>
+        <br />
+        <fieldset>
+            <legend>관심사</legend>
+            <input type="checkbox" name="hobby" value="여행">
+            <label for="traval">여행</label>
+            <input type="checkbox" name="hobby" value="패션">
+            <label for="fashion">패션</label>
+            <input type="checkbox" name="hobby" value="음식">
+            <label for="food">음식</label>
+        </fieldset>
+        <button type="button" onclick="axiosGet()">axios get 제출</button>
+        <button type="button" onclick="axiosPost()">axios post 제출</button>
+    </form>
+    <div class="result"></div>
+    <script>
+        const resultBox = document.querySelector('.result');
+
+        function axiosGet() {
+            const form = document.forms['formGet']
+
+            // hobby의 값을 check.checked를 사용해서 골라내라는데 이해가 안된다...
+
+            const data = {
+                name: form.name.value,
+                gender: form.gender.value,
+                birthYear: form.birthYear.value,
+                birthMonth: form.birthMonth.value,
+                birthDay: form.birthDay.value,
+                hobby: form.hobby.value
+            };
+            axios({
+                method: 'GET',
+                url: '/axios',
+                params: data
+            }).then((res)=>{
+                console.log('(get)res: ', res);
+                const {result, name, gender ,birthYear, birthMonth, birthDay, hobby} = res.data;
+                if (result) {
+                    resultBox.textContent= 
+                    `${name}님의 성별은 ${gender}입니다. 
+                    생년월일은 ${birthYear}년 ${birthMonth}월 ${birthDay}일입니다. 
+                    관심사는 ${hobby}입니다.`
+                } else {
+                    resultBox.textContent= `오류가 생성되었습니다.`
+                }
+            });
+        };
+    </script>
+</body>
+</html>
