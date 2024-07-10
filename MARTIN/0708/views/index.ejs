@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
+    
 </head>
 <body>
     <h3>동적 파일 업로드 실습</h3>
@@ -12,7 +14,7 @@
         <input type="password" id="pw" placeholder="비밀번호"required /><br />
         <input type="text" id="username" placeholder="이름" required /><br />
         <input type="number" id="age" placeholder="나이" required /><br />
-        <input type="file" id="myfile" /><br />
+        <input type="file" id="myfile" multiple /><br />
         <button type="submit">제출</button>
     </form>
     <br />
@@ -24,7 +26,40 @@
             console.log(e);
             e.preventDefault(); // submit으로 제출 되는 것을 막는 것
             console.log(e);
-        }
+            
+
+            const id = document.querySelector('#id').value; // #은 왜 붙이는 거임? / 이유: querySelector는 태그, id, class를 불러오는데 현재 id로 속성을 주었기 때문에 #을 붙여서 하는 거임 css로 속성 주는 거 생각하면 편함 예) class인 경우는 .을 붙임
+            const pw = document.querySelector('#pw').value;
+            const username = document.querySelector('#username').value;
+            const age = document.querySelector('#age').value;
+            const file = document.querySelector('#myfile').files[0]; // file은 Filelist에 배열로 나오기 때문에 첫번째인 0번을 골라주면 됨
+            
+            const data = new FormData(); // multer는 FormData에..?
+            // append(key이름, value값) // append는 뭔데...?
+            data.append("id", id);
+            data.append("pw", pw);
+            data.append("username", username);
+            data.append("age", age);
+            data.append("userfile", file); // upload.single('userfile')이랑 이름이 같아야 함 / 왜..?
+
+            axios({
+                method: 'POST',
+                url: '/upload',
+                data, // key와 value는 동일하기에 data라고 적어도 됨
+                headers: {
+                    'Content-Type': 'multipart/form-data', // Content-Type = enctype 서로 같은거임  / 인코딩 타입에 뭐뭐 있는지 알아보기
+                }
+
+            }).then(res =>{
+                console.log('.then - res', res);
+                resultBox.innerHTML = `<img src=${res.data.filename} style="width:200px" "height:200px">
+                    <div><strong>${id}님 환영합니다</strong></div>
+                    <div>비밀번호: ${pw}</div>
+                    <div>이름: ${username}</div>
+                    <div>나이: ${age}</div>
+                `;
+            })
+        };
     </script>
 </body>
 </html>
