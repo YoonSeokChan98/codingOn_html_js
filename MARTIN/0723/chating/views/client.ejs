@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <h3>채팅방</h3>
+    <div id="room">
+        <form id="room-form">
+            <input type="text" id="userName" placeholder="사용자 이름 입력">
+            <input type="text" id="roomName" placeholder="채팅방 만들기" />
+            <button>입장</button>
+        </form>
+    </div>
+    <ul id="room-list"></ul>
+    <!-- 채팅방 -->
+    <div id="chat" hidden>
+        <div id="message">
+            <div id="notice"></div>
+        </div>
+        <form id="chat-form">
+            <input type="text" id="chat-message" placeholder="메세지 입력" />
+            <button>전송</button>
+            <!-- <select name="" id=""></select> -->
+        </form>
+    </div>
+
+    <script>
+        const socket = io();
+        const roomForm = document.querySelector('#room-form');
+        const chatForm = document.querySelector('#chat-form');
+        const notice = document.querySelector('#notice');
+        const message = document.querySelector('#message')
+
+        // 채팅
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const msg = chatForm.querySelector('#chat-message');
+            const name = roomForm.querySelector(('#userName'))
+            socket.emit('sendMessage', {name: name.value, message: msg.value });
+            msg.value = '';
+        });
+
+        // 폼 이벤트 / 채팅방이 만들어지는 곳
+        roomForm.addEventListener('submit', (e) => { //onclick을 이용해서 만들어도 됨
+            e.preventDefault()
+            const roomName = roomForm.querySelector('#roomName').value;
+            const userName = roomForm.querySelector('#userName').value;
+
+            // 값이 비어있으면 방이름과 닉네임을 적으라는 안내문구를 띄워줌
+            if (roomName === '' || userName === '') {
+                alert('방이름과 닉네임을 적어주세요');
+                return;
+            }
+
+            socket.emit('create', { roomName, userName }); //roomName을 백으로 보냄
+
+            const room = document.querySelector('#room');
+            const chat = document.querySelector('#chat');
+            room.hidden = true;
+            chat.hidden = false;
+        });
+
+        // 소켓이벤트
+        socket.on('notice', (arg) => {
+            // const roomList = document.querySelector('#room-list');
+            console.log('입장 로그:', arg);
+            const p = document.querySelector('p');
+            p.textContent = arg;
+            notice.appendChild(p);
+        });
+
+        socket.on('roomList', (arg) => {
+            const roomList = document.querySelector('#room-list');
+            roomList.textContent = '';
+            console.log('roomList', arg);
+            arg.forEach((room) => {
+                const li = document.createElement('li');
+                li.textContent = room;
+                roomList.appendChild(li);
+            });
+        });
+
+        socket.on('newMessage', (arg) => {
+            const p = document.createElement('p');
+            p.textContent = `${arg.userName}:${arg.message}`;
+            message.appendChild(p);
+        });
+    </script>
+
+</body>
+
+</html>

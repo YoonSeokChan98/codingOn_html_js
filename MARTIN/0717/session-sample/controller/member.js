@@ -24,7 +24,6 @@ exports.signup = async (req, res) => {
     }
 };
 
-
 // 로그인
 exports.login = async (req, res) => {
     try {
