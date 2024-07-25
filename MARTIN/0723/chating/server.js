@@ -5,6 +5,7 @@ const app = express();
 const PORT = 8000;
 
 app.set('view engine', 'ejs');
+
 const server = http.createServer(app);
 const io = socketIo(server);
 
@@ -40,9 +41,9 @@ io.on('connection', (socket) => {
     });
 
     socket.on('sendMessage', (arg) => {
-        const {message } = arg;
+        const { message } = arg;
         // console.log("왜 안되는데", socket.userName); //야발
-        io.to(socket.roomName).emit('newMessage',{ message, userName: socket.userName });
+        io.to(socket.roomName).emit('newMessage', { message, userName: socket.userName });
     });
 });
 

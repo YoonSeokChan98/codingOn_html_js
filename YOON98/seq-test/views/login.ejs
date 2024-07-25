@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <h3>로그인</h3>
+    <form>
+        <input type="email" id="email" placeholder="이메일" /><br />
+        <input type="password" id="password" placeholder="비밀번호" /><br />
+        <button type="button" onclick="login()">로그인</button>
+    </form>
+
+    <script>
+        function login() {
+            const data = {
+                email: document.querySelector('#email').value,
+                password: document.querySelector('#password').value,
+            };
+            axios({
+                method: 'POST',
+                url: '/api/user/login',
+                data,
+            }).then((res) => {
+                // console.log('true&false', res.data.result); //  true
+                // console.log('로그인', res.data.response); // {id: 1, email: 'asdf@asdf.asdf', name: '홍길동'}
+                console.log(res.data);
+                if (res.data.result) {
+                    alert(`어서오세요 ${res.data.response.name}님!`)
+
+                } else {
+                    if (res.data.code === 2001) {
+                        alert('가입된 정보가 존재하지 않습니다.')
+                        document.location.href = '/book';
+                    } else if (res.data.code === 2002) {
+                        if (confirm('비밀번호가 틀렸습니다. 비밀번호를 찾으시겠습니까?')) {
+                            console.log('비밀번호 찾기 페이지로 이동');
+                        }
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
