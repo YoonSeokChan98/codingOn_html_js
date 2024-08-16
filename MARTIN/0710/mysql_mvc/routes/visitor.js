@@ -19,7 +19,7 @@ router.post('/write', controller.postVisitor);
 // patch 방명록 하나 수정
 router.patch('/update', controller.patchVisitor);
 
-// delate 방명록 하나 삭제
+// delakte 방명록 하나 삭제
 router.delete('/delete', controller.deleteVisitor);
 
 module.exports = router;

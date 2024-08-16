@@ -34,7 +34,7 @@ function getUserList(room) {
 }
 
 const roomList = [];
-io.on('connection', (socket) => {
+io.on('connection', (socket) =>
     //socket변수는 접속한 브라우저들(구글탭)
     io.emit('roomList', roomList);
     //웹브라우저가 접속이되면 고유한 id값이 생성됨. socket.id
